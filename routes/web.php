@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SalePageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [HomeController::class,'index']);
 
 Route::prefix('category')->group(function() {
     Route::get('/food-beverage', [ProductController::class, 'foodBeverage'])->name('foodbeverage');
@@ -25,5 +25,5 @@ Route::prefix('category')->group(function() {
     Route::get('/home-care', [ProductController::class, 'homeCare'])->name('homecare');
     Route::get('/baby-kid', [ProductController::class, 'babyKid'])->name('babykid');
 });
-
 Route::get('/user/{id}/name/{name}', [UserController::class, 'user']);
+Route::get('/sales', [SalePageController::class, 'sales']);
