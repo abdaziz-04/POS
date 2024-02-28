@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+Route::prefix('category')->group(function() {
+    Route::get('/food-beverage', [ProductController::class, 'foodBeverage'])->name('foodbeverage');
+    Route::get('/beauty-health', [ProductController::class, 'beautyHealth'])->name('beautyhealth');
+    Route::get('/home-care', [ProductController::class, 'homeCare'])->name('homecare');
+    Route::get('/baby-kid', [ProductController::class, 'babyKid'])->name('babykid');
+});
+
+Route::get('/user/{id}/name/{name}', [UserController::class, 'user']);
