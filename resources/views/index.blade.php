@@ -11,7 +11,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Products</h5>
                         <p class="card-text">Explore our amazing products.</p>
-                        <a href="products.html" class="btn btn-primary">Go to Products</a>
+                        <a href="" class="btn btn-primary">Go to Products</a>
                     </div>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Sales</h5>
                         <p class="card-text">Check out our latest promotions.</p>
-                        <a href="sales.html" class="btn btn-primary">Go to Sales</a>
+                        <a href="" class="btn btn-primary">Go to Sales</a>
                     </div>
                 </div>
             </div>
